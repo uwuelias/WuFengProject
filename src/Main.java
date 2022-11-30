@@ -53,7 +53,6 @@ public class Main {
                 System.out.print("Please answer correctly.\n> ");
             }
             CurrencyConverter converter = new CurrencyConverter(currency, money, newCurrency);
-
         }
     }
 }
