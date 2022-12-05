@@ -6,11 +6,12 @@ public class Main {
         System.out.println("What would you like to do today?");
         System.out.print("1. convert currency \n2. quit\n> ");
         int input = scan.nextInt();
-        /*while (input == "") {
+        String inputString = Integer.toString(input);
+        while (inputString == "") {
             System.out.print("> ");
-            input = scan.nextLine();
+            input = scan.nextInt();
+            inputString = Integer.toString(input);
         }
-         */
         if (input == 2) {
             System.out.println("Thank you for using Elias's currency converter!\nGoodbye!");
             System.exit(0);
@@ -45,19 +46,17 @@ public class Main {
                     8. Japanese Yen
                     9. Vietnamese dong
                     10. South Korean Won
-                    11. Canadian Dollar""");
-            System.out.print("\n> ");
+                    11. Canadian Dollar\n>""");
             int newCurrency = scan.nextInt();
             CurrencyConverter converter = new CurrencyConverter(currency, money, newCurrency);
             System.out.print(money + " " + converter.getOrigCurrency() + " is " + converter.getNewAmount() + " in " + converter.getConvertedCurrency());
             System.out.println("\nWhat else would you like to do today?");
             System.out.print("1. convert currency \n2. quit\n> ");
             input = scan.nextInt();
-           /* while (input == "") {
+            while (inputString == "") {
                 System.out.print("> ");
                 input = scan.nextInt();
             }
-            */
             if (input == 2) {
                 System.out.println("Thank you for using Elias's currency converter!\nGoodbye!");
                 System.exit(0);
