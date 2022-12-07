@@ -1,8 +1,11 @@
 import java.util.Scanner;
+import java.text.DecimalFormat;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Hello welcome to Elias's currency converter!");
+        System.out.print("What's your name: ");
+        String name = scan.nextLine();
+        System.out.println("Hello " + name + "! welcome to Elias's currency converter!");
         System.out.println("What would you like to do today?");
         System.out.print("1. convert currency \n2. quit\n> ");
         int input = scan.nextInt();
@@ -49,8 +52,8 @@ public class Main {
                     11. Canadian Dollar\n>""");
             int newCurrency = scan.nextInt();
             CurrencyConverter converter = new CurrencyConverter(currency, money, newCurrency);
-            CurrencyConverter converter1 = new CurrencyConverter(currency, newCurrency);
-            System.out.print(money + " " + converter.getCurrency2() + " is " + converter.getNewAmount() + " in " + converter.getCurrency3());
+            converter.setConvertingRate();
+            System.out.print(money + " " + converter.getOrigCurrency().toString() + " is " + converter.getNewAmount().toString() + " in " + converter.getConvertedCurrency().toString());
             System.out.println("\nWhat else would you like to do today?");
             System.out.print("1. convert currency \n2. quit\n> ");
             input = scan.nextInt();
